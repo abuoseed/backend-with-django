@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %} {% load static %} <link
+rel="stylesheet" href="{% static "css/login.css" %}"/>
+<form  method="POST">
+  {% csrf_token %}
+  <div class="container">
+    <label for="name" class="form-label">Your Name</label>
+    <input
+      class="form-control"
+      id="name"
+      type="text"
+      placeholder="Your Name"
+      name='name'
+      required
+    />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Email address</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="name@example.com"
+        name='email'
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword5" class="form-label">Password</label>
+      <input
+        type="password"
+        id="inputPassword5"
+        class="form-control"
+        aria-describedby="passwordHelpBlock"
+        name='password'
+        required
+      />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-outline-success">save</button>
+    </div>
+  </div>
+</form>
+{% endblock content %}

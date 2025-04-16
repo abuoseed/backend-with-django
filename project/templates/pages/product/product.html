@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% load static %} <link
+rel="stylesheet" href="{% static "css/style.css" %}"/>
+<div class="col">
+    <div class="card" style="width: 25rem">
+      <img
+        src="{{product.image.url}}"
+        class="card-img-top"
+        alt="{{product.description}}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text text-truncate">{{product.description}}</p>
+        <a href="{% url 'pro:product' product.id %}" class="btn btn-primary">add to cart</a>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
